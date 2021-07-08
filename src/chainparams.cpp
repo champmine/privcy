@@ -295,13 +295,13 @@ public:
         consensus.BIP66Height = 1;
         consensus.DIP0001Height = 2;
         consensus.DIP0003Height = 2;
-        consensus.DIP0003EnforcementHeight = 1048576;
+        consensus.DIP0003EnforcementHeight = 20;         // burster51 changed from 1048576;
         consensus.DIP0003EnforcementHash = uint256S("0x00");
 
-        consensus.powLimit = uint256S("0x000fffff00000000000000000000000000000000000000000000000000000000");
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // PRiVCY: 1 day
+        consensus.powLimit = uint256S("0x00ffffff00000000000000000000000000000000000000000000000000000000");
+        consensus.nPowTargetTimespan = 2 * 60 * 60; // PRiVCY: 1 day
         consensus.nPowTargetSpacing = 2 * 60; // PRiVCY: 2 minutes
-        consensus.fPowAllowMinDifficultyBlocks = false;
+        consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
         consensus.nPowKGWHeight = 1;
         consensus.nPowDGWHeight = 2;
@@ -365,7 +365,7 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0x33;
+        pchMessageStart[0] = 0xa3;
         pchMessageStart[1] = 0x1a;
         pchMessageStart[2] = 0x3c;
         pchMessageStart[3] = 0x5d;
